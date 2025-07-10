@@ -2,23 +2,53 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <title>เข้าสู่ระบบ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/log_res.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>เมนูหน้าเพจทั้งหมด</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      max-width: 800px;
+      margin: 30px auto;
+    }
+    .menu a {
+      display: block;
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #007acc;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .menu a:hover {
+      background-color: #e6f7ff;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-  <div id="langToggle">EN</div>
-  <h2 id="loginTitle">เข้าสู่ระบบ</h2>
-  <form id="loginForm">
-    <input type="text" name="username" placeholder="ชื่อผู้ใช้" required />
-    <input type="password" name="password" placeholder="รหัสผ่าน" required />
-    <button type="submit" id="loginBtn">เข้าสู่ระบบ</button>
-  </form>
-  <button class="link-button" id="registerBtn">สร้างบัญชีใหม่</button>
-  <p id="msg" style="color:red;"></p>
-  <button class="link-button" id="forgotpassBtn">ลืมรหัสผ่าน</button>
-  <p id="msg" style="color:red;"></p>
-
-  <script src="../JS/login.js"></script>
+  <h1>รวมลิงก์หน้าเพจทั้งหมด</h1>
+  <div class="menu">
+    <a href="index.html">🏠 หน้าแรก (index.html)</a>
+    <a href="login.html">🔑 เข้าสู่ระบบ (login.html)</a>
+    <a href="register.html">📝 สมัครสมาชิก (register.html)</a>
+    <a href="forgotpass.html">🔁 ลืมรหัสผ่าน (forgotpass.html)</a>
+    <a href="RoomUser.html">👤 หน้าผู้ใช้งาน (RoomUser.html)</a>
+    <a href="RoomAdmin.html">🛠️ หน้าผู้ดูแล 1 (RoomAdmin.html)</a>
+    <a href="RoomAdmin2.html">🛠️ หน้าผู้ดูแล 2 (RoomAdmin2.html)</a>
+  </div>
 </body>
 </html>
