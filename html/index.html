@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>หน้าแรก</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/index.css">
+  </head>
+<body>
+  <div id="langToggle" onclick="toggleLanguage()">EN</div>
+
+  <div class="container">
+    <h1 id="welcomeTitle">ยินดีต้อนรับสู่ระบบจัดการหอพัก</h1>
+    <p id="welcomeMessage">จัดการและค้นหาห้องพักให้เช่าได้อย่างง่ายดาย</p>
+
+    <div class="button-group">
+      <button class="action-button" onclick="location.href='./login.html'" id="loginLink">เข้าสู่ระบบ</button>
+      <button class="action-button" onclick="location.href='./register.html'" id="registerLink">สมัครสมาชิก</button>
+      <button class="action-button" onclick="location.href='./RoomUser.html'" id="browseRoomsLink">ดูห้องว่าง</button>
+    </div>
+
+    <p id="msg" style="color:red;"></p>
+  </div>
+
+  <script>
+    // JavaScript สำหรับการสลับภาษา (อ้างอิงจาก RoomUser.html, login.html, register.html)
+    // คุณอาจต้องปรับปรุง logic นี้ให้เข้ากับระบบภาษาของคุณ
+    const texts = {
+      th: {
+        welcomeTitle: "ยินดีต้อนรับสู่ระบบจัดการหอพัก",
+        welcomeMessage: "จัดการและค้นหาห้องพักให้เช่าได้อย่างง่ายดาย",
+        loginLink: "เข้าสู่ระบบ",
+        registerLink: "สมัครสมาชิก",
+        browseRoomsLink: "ดูห้องว่าง",
+        langToggle: "EN"
+      },
+      en: {
+        welcomeTitle: "Welcome to Dormitory Management System",
+        welcomeMessage: "Easily manage and find rooms for rent.",
+        loginLink: "Login",
+        registerLink: "Register",
+        browseRoomsLink: "Browse Rooms",
+        langToggle: "TH"
+      }
+    };
+
+    let currentLang = 'th'; // ภาษาเริ่มต้น
+
+    function updateText() {
+      document.getElementById('welcomeTitle').textContent = texts[currentLang].welcomeTitle;
+      document.getElementById('welcomeMessage').textContent = texts[currentLang].welcomeMessage;
+      document.getElementById('loginLink').textContent = texts[currentLang].loginLink;
+      document.getElementById('registerLink').textContent = texts[currentLang].registerLink;
+      document.getElementById('browseRoomsLink').textContent = texts[currentLang].browseRoomsLink;
+      document.getElementById('langToggle').textContent = texts[currentLang].langToggle;
+    }
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'th' ? 'en' : 'th';
+      updateText();
+    }
+
+    // เรียกใช้เมื่อโหลดหน้าเว็บครั้งแรก
+    document.addEventListener('DOMContentLoaded', updateText);
+  </script>
+</body>
+</html>
